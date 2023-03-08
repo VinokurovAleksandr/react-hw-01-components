@@ -1,16 +1,10 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Profile from './Profile/Profile';
+
+
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+  <Profile />);
