@@ -1,10 +1,27 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
 import Profile from './Profile/Profile';
+import css from '../../src/index.css'
+import user from './Profile/user.json';
+// import { useEffect } from 'react';
+
+export default function App() {
+  return (
+    <div>
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        followers={user.stats.followers}
+        views={user.stats.views}
+        likes={user.stats.likes}
+    />
+    </div>
+  )
+}
 
 
-
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(
-  <Profile />);
+// const container = document.getElementById('root');
+// const root = createRoot(container);
+// root.render(
+//   <Profile
+//   />);
