@@ -1,6 +1,8 @@
 import Profile from './Profile/Profile';
-import css from '../../src/index.css'
+import Statistics from '../components/Statistics/Statistics';
+import css from '../../src/index.css';
 import user from './Profile/user.json';
+import dataStat from '../Statistics/statistics.json';
 // import { useEffect } from 'react';
 
 export default function App() {
@@ -14,7 +16,13 @@ export default function App() {
         followers={user.stats.followers}
         views={user.stats.views}
         likes={user.stats.likes}
-    />
+      />
+
+        <Statistics 
+          id={dataStat.label}
+          label={dataStat.dataStat}
+          percentage={dataStat.percentage}
+        />
     </div>
   )
 }
