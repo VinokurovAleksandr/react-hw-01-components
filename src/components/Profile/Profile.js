@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import ProfileCss from '../Profile/Profile.css';
+import defaultImage from '../Profile/defaultImage.jpg'
 
 export default function Profile({
-    avatar,
+    avatar = defaultImage,
     username,
     tag,
     location,

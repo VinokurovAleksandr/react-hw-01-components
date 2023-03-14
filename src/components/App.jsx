@@ -1,8 +1,12 @@
 import Profile from './Profile/Profile';
 import Statistics from '../components/Statistics/Statistics';
 import css from '../../src/index.css';
+
+
 import user from './Profile/user.json';
-import dataStat from '../Statistics/statistics.json';
+import data from './Statistics/data.json';
+// import StatList from './Statistics/StatList'
+
 // import { useEffect } from 'react';
 
 export default function App() {
@@ -18,12 +22,22 @@ export default function App() {
         likes={user.stats.likes}
       />
 
+      <Statistics title="Upload stats" stats={data} />
+      {/* {data.map(datas => 
         <Statistics 
-          id={dataStat.label}
-          label={dataStat.dataStat}
-          percentage={dataStat.percentage}
+          key={datas.id}
+          label={datas.label}
+          percentage={datas.percentage}
         />
+      ) */}
+         {/* } */}
     </div>
+
+    
+      
+
+
+    
   )
 }
 

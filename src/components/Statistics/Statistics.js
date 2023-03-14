@@ -1,31 +1,32 @@
 import PropTypes from 'prop-types';
+import statCss from '../Statistics/Statistics.module.css';
 
 
-const Statistics = ({label, percentage}) => {
+export default function Statistics({
+    title ,
+    stats }) {
+
     return (
-        <section className="statistics">
-            <h2 className="title">Upload stats</h2>
+        <section className={statCss.statistics}>
+            <h2 className={statCss.title}>Upload stats</h2>
 
-            <ul className="stat-list">
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}</span>
+            <ul className={statCss.statList}>
+                {stats.map(stat => (
+                    <li className={statCss.item}
+                        key={stat.id}
+                        style={{backgroundColor:rundomColorBlock()}}
+                    >
+                    <span className={statCss.label}>{stat.label}</span>
+                    <span className={statCss.percentage}>{stat.percentage}%</span>
                 </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}</span>
-                </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}</span>
-                </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}</span>
-                </li>
+                ))}
             </ul>
         </section>
     )
 };
 
-export default Statistics;
+function rundomColorBlock() {
+    return (
+        '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase()
+    )  
+};
