@@ -1,10 +1,13 @@
 import Profile from './Profile/Profile';
 import Statistics from '../components/Statistics/Statistics';
-import css from '../../src/index.css';
+import FriendList from './FriendList/FriendList';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 
 import user from './Profile/user.json';
 import data from './Statistics/data.json';
+import friends from './FriendList/friends.json';
+import transactions from './TransactionHistory/transactions.json'
 // import StatList from './Statistics/StatList'
 
 // import { useEffect } from 'react';
@@ -23,14 +26,8 @@ export default function App() {
       />
 
       <Statistics title="Upload stats" stats={data} />
-      {/* {data.map(datas => 
-        <Statistics 
-          key={datas.id}
-          label={datas.label}
-          percentage={datas.percentage}
-        />
-      ) */}
-         {/* } */}
+      <FriendList friends={friends} />
+      {/* <TransactionHistory items={transactions} /> */}
     </div>
 
     
@@ -39,11 +36,6 @@ export default function App() {
 
     
   )
-}
+};
 
 
-// const container = document.getElementById('root');
-// const root = createRoot(container);
-// root.render(
-//   <Profile
-//   />);
